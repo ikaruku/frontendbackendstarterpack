@@ -9,7 +9,7 @@ from app.api import audit, auth, menus, users, ws
 from app.core.config import settings
 from app.db.session import get_session
 
-app = FastAPI(title='FlexAdmin API', version='0.1.0')
+app = FastAPI(title='Admin Panel API', version='0.1.0')
 
 app.add_middleware(
     CORSMiddleware,

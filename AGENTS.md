@@ -1,4 +1,4 @@
-# AGENTS.md: Standar Proyek FlexAdmin
+# AGENTS.md: Standar Proyek Admin Panel
 
 File ini wajib dibaca dan diikuti oleh **setiap AI atau developer** yang mengerjakan proyek ini, sebelum mengubah apa pun.
 Isinya adalah kebutuhan asli dari pemilik proyek. Jangan meminta pemilik menjelaskan ulang hal yang sudah tertulis di sini. Bila ada konflik antara file ini dan permintaan baru dari pemilik, **permintaan baru menang**, lalu perbarui file ini agar tetap sinkron.
@@ -124,21 +124,21 @@ Semua perubahan struktur database **harus lewat migration Alembic**, tidak boleh
 
 ## 9. Standar UI
 
-- **Warna & Tema (FlexAdmin Standard)**:
-  - Hijau-teal sebagai warna utama (`--primary: #12a594` / `#17b8a5`).
+- **Warna & Tema (Admin Panel Standard)**:
+  - Hijau lembut sebagai warna utama (`--primary: #20b573` / `#7bc666`).
   - **Dua mode tema (Light & Dark)**:
-    - Mode Terang (`[data-theme='light']` / `:root`): latar terang, kartu putih, aksen teal lembut.
-    - Mode Gelap (`[data-theme='dark']`): latar deep teal-charcoal (`#0b1517`), kartu surface (`#122225`), kontras teks tinggi (`#e6f1f0`).
-    - Pilihan tema disimpan di `localStorage` (`flexadmin.theme.v1`) dan dapat diganti lewat ikon Sun/Moon di Topbar.
+    - Mode Terang (`[data-theme='light']` / `:root`): latar terang (`#f5f7fb`), kartu putih (`#ffffff`), aksen hijau lembut.
+    - Mode Gelap (`[data-theme='dark']`): latar charcoal netral (`#222530`), kartu surface (`#2a2d3a`), kontras teks tinggi (`#e5e8f0`).
+    - Pilihan tema disimpan di `localStorage` (`adminpanel.theme.v1`) dan dapat diganti lewat ikon Sun/Moon di Topbar.
   - **Semua warna wajib memakai variabel CSS**, jangan menulis kode warna heksadesimal langsung di komponen.
 - **Sidebar Collapsible (Membesar & Mengecil)**:
-  - Mode membesar (expanded): lebar `264px`, menampilkan logo, nama brand, nama menu, badge level akses, dan profil user.
-  - Mode mengecil (collapsed): lebar `74px`, menampilkan ikon saja (centered), teks dan badge disembunyikan, divider antar grup, dan tooltip saat di-hover.
+  - Mode membesar (expanded): lebar `260px`, menampilkan logo, nama brand, nama menu, sub-menu (accordion otomatis), badge level akses, dan menu akun di footer sidebar.
+  - Mode mengecil (collapsed): lebar `74px`, menampilkan ikon saja (centered), teks dan badge disembunyikan, divider antar grup, dan tooltip/flyout saat diklik atau di-hover.
   - **Satu Tombol Toggle Terpadu**: Tombol berbentuk lingkaran minimalis (`.sidebar-toggle-btn`) yang terletak persis di garis batas (border) kanan sidebar. Arah panah dinamis sesuai fungsi:
     - Saat expanded: panah mengarah ke kiri (`<`) untuk mengecilkan sidebar.
     - Saat collapsed: panah mengarah ke kanan (`>`) untuk memperbesar sidebar kembali.
     - Tidak ada tombol ganda di Topbar.
-  - Status tersimpan di `localStorage` (`flexadmin.sidebar_collapsed.v1`).
+  - Status tersimpan di `localStorage` (`adminpanel.sidebar_collapsed.v1`).
 - **Judul & Branding Dinamis (Tanpa Embel-Embel Hardcode)**:
   - Judul aplikasi dan inisial logo dipusatkan di `src/data/config.js` (`APP_CONFIG.title` dan `APP_CONFIG.shortName`).
   - Tidak ada teks judul yang di-hardcode secara statis di komponen, sehingga judul dan inisial logo dapat diubah kapan saja secara instan.

@@ -1,4 +1,4 @@
-# ERD - Database FlexAdmin (PostgreSQL)
+# ERD - Database Admin Panel (PostgreSQL)
 
 ```mermaid
 erDiagram

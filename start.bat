@@ -27,10 +27,10 @@ if not exist "%~dp0frontend\node_modules" (
 )
 
 echo Starting Backend API on port 8000...
-start "FlexAdmin Backend (8000)" cmd /k "cd /d "%~dp0backend" && "%BACKEND_PY%" -m uvicorn app.main:app --reload --port 8000"
+start "Admin Panel Backend (8000)" cmd /k "cd /d "%~dp0backend" && "%BACKEND_PY%" -m uvicorn app.main:app --reload --port 8000"
 
 echo Starting Frontend Dev Server on port 5173...
-start "FlexAdmin Frontend (5173)" cmd /k "cd /d "%~dp0frontend" && set "PATH=C:\Program Files\nodejs;%PATH%" && npm.cmd run dev"
+start "Admin Panel Frontend (5173)" cmd /k "cd /d "%~dp0frontend" && set "PATH=C:\Program Files\nodejs;%PATH%" && npm.cmd run dev"
 
 timeout /t 3 /nobreak >nul
 start "" "http://localhost:5173"

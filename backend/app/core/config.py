@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     refresh_token_days: int = 7
 
     cookie_secure: bool = False
-    refresh_cookie_name: str = 'flexadmin_refresh'
+    refresh_cookie_name: str = 'admin_panel_refresh'
     cors_origins: str = 'http://localhost:5173,http://127.0.0.1:5173'
     login_rate_limit_max: int = 5
     login_rate_limit_window_seconds: int = 60

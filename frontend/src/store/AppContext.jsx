@@ -19,8 +19,8 @@ import {
  * - Authenticated WebSocket keeps user lists, menus, and active permissions synced in realtime.
  */
 
-const THEME_KEY = 'flexadmin.theme.v1'
-const SIDEBAR_KEY = 'flexadmin.sidebar_collapsed.v1'
+const THEME_KEY = 'adminpanel.theme.v1'
+const SIDEBAR_KEY = 'adminpanel.sidebar_collapsed.v1'
 
 const AppContext = createContext(null)
 
@@ -154,15 +154,8 @@ export function AppProvider({ children }) {
     return nextUser
   }, [loadWorkspaceData])
 
-  /* ---------- Restore Session on Boot & Clear Legacy Mock Storage ---------- */
+  /* ---------- Restore Session on Boot ---------- */
   useEffect(() => {
-    try {
-      localStorage.removeItem('flexadmin.users.v2')
-      sessionStorage.removeItem('flexadmin.session.v1')
-    } catch {
-      /* ignore */
-    }
-
     setAuthLostHandler(() => {
       clearSessionState()
     })

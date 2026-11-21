@@ -24,8 +24,8 @@ BACKEND_DIR = Path(__file__).resolve().parent.parent
 ENV_FILE = BACKEND_DIR / '.env'  # used by the app (least privilege)
 ADMIN_FILE = BACKEND_DIR / '.env.admin'  # PostgreSQL superuser, ONLY used by this script
 
-DB_NAME = 'flexadmin'
-DB_USER = 'flexadmin_app'
+DB_NAME = 'admin_panel'
+DB_USER = 'admin_panel_app'
 DB_HOST = 'localhost'
 DB_PORT = '5432'
 PG_WINGET_ID = 'PostgreSQL.PostgreSQL.16'
